@@ -1,6 +1,18 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
-if true then return {} end
+if true then
+  return {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "lewis6991/async.nvim", -- Add this line
+    },
+    config = function()
+        require("refactoring").setup({})
+    end,
+}
+end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
 --
